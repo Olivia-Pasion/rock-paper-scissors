@@ -20,13 +20,13 @@
 
     <main>
         <section>
-            <h2></h2>
+            <h2>Score Board</h2>
                 <p>
 
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    Games: <span>0</span>
+                    Wins: <span>0</span>
+                    Draws: <span>0</span>
+                    Losses: <span>0</span>
 
                 </p>
                 
@@ -34,52 +34,56 @@
             
         <section>
 
-            <h2></h2>
-                <p>
+            <h2>Throw Tracker</h2>
+                <p id="throw-display">
 
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    Rock: <span id="rock-display">0</span>
+                    Paper: <span id="paper-display">0</span>
+                    Scissors: <span id="scissors-display">0</span>
 
                 </p>
 
         </section>
 
-        <section>
+        <section id="buttons">
 
-            <h2></h2>
-                <button>
-                    <img>
-                    <p></p>
+            <h2>Choose Your Throw</h2>
+                
+                <button id="rock-button" class="throw-hand">
+                    <img src="assets/images/rock.png">
+                    <p>Rock</p>
                 </button>
-                <button>
-                    <img>
-                    <p></p>
+                <button id="paper-button" class="throw-hand">
+                    <img src="assets/images/paper.png">
+                    <p>Paper</p>
                 </button>
-                <button>
-                    <img>
-                    <p></p>
+                <button id="scissorsbutton" class="throw-hand">
+                    <img src="assets/images/scissors.png">
+                    <p>Scissors</p>
                 </button>
 
         </section>
 
-        <section> Hidden 
+        <section > Hidden 
 
-            <h2></h2>
-            <div>
+            <h2>Results!</h2>
+            <div id="player-display">
                 <img>
-                <p></p>
+                <p>Player</p>
             </div>
-            <div>
+            <div id="outcome-display">
                 <img>
-                <p></p>
+                    <p class="result-display">Win</p>
+                    <p class="result-display">Draw</p>
+                    <p class="result-display">Loss</p>
             </div>
-            <div>
+            <div id="computer-display">
                 <img>
-                <p></p>
+                <p>Computer</p>
             </div>
 
         </section>
+
     </main>
 
     <footer>&copy;2021 Aspiring Software Developer</footer>

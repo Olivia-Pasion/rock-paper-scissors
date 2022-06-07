@@ -1,6 +1,13 @@
 // import needed modules
-
+import { getRandomItem} from './utils.js';
 // state
+const throws = [rock, paper, scissors];
+let games = 0;
+let wins = 0;
+let loss = 0;
+let timeout = 0;
+let throw = '';
+let throwSelect = '';
 
 // components
     // component

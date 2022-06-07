@@ -80,6 +80,7 @@
     - playerSelect (event?)
     - playerDisplay
     - outcomeDisplay
+    - computerSelect
     - computerDisplay
 
     - If dynamic, what is **state** and what is it called
