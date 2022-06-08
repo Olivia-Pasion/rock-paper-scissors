@@ -13,7 +13,37 @@
     gap: 15px;
 }
 
+.outcome {
+    width: 30%;
+    border-radius: 5rem;
+    background-color: thistle;
+    border: 0;
+    
+    
+    padding: 25px;
+    font-weight: bold;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+
+}
+
 #buttons {
+    width: 50%;
+    height: 10em;
+}
+
+#player-image {
+    width: 50%;
+    height: 10em;
+}
+
+#outcome-image {
+    width: 50%;
+    height: 10em;
+}
+
+#computer-image {
     width: 50%;
     height: 10em;
 }
