@@ -1,5 +1,19 @@
 /* add css for index.html */
 
-#buttons{
-    width: 20%;
+.throw-hand{
+    width: 30%;
+    border-radius: 5rem;
+    background-color: thistle;
+    border: 0;
+    
+    
+    padding: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    gap: 15px;
+}
+
+#buttons {
+    width: 50%;
+    height: 10em;
 }

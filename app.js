@@ -1,15 +1,113 @@
 // import needed modules
-import { getRandomItem} from './utils.js';
+import { getRandomItem, score } from './assets/utils.js';
+
 // state
-const throws = [rock, paper, scissors];
+const hands = ['rock', 'paper', 'scissors'];
 let games = 0;
 let wins = 0;
-let loss = 0;
-let timeout = 0;
-let throw = '';
-let throwSelect = '';
+let losses = 0;
+let draws = 0;
+
+let rock = 0;
+let paper = 0;
+let scissors = 0;
+
+let computerSelect = 'rock';
+let throwSelect = 'paper';
+
+
 
 // components
+
+//score component
+
+const gamesDisplay = document.getElementById('games-display');
+const winsDisplay = document.getElementById('wins-display');
+const drawsDisplay = document.getElementById('draws-display');
+const lossesDisplay = document.getElementById('losses-display');
+
+function scoreDisplay() {
+    
+    gamesDisplay.textContent = games;
+    winsDisplay.textContent = wins;
+    drawsDisplay.textContent = draws;
+    lossesDisplay.textContent = losses;
+}
+
+//throw record component
+
+const rockDisplay = document.getElementById('rock-display');
+const paperDisplay = document.getElementById('paper-display');
+const scissorsDisplay = document.getElementById('scissors-display');
+
+function throwRecordDisplay() { 
+    
+    rockDisplay.textContent = rock; 
+    paperDisplay.textContent = paper;
+    scissorsDisplay.textContent = scissors;
+
+    
+}
+
+
+//choose throw component
+
+const rockButton = document.getElementById('rock-button');
+const paperButton = document.getElementById('paper-button');
+const scissorsButton = document.getElementById('scissors-button');
+
+rockButton.addEventListener('click', () => {
+    handleThrow('rock');
+    
+});
+
+paperButton.addEventListener('click', () => {
+    handleThrow('paper');
+     
+});
+
+scissorsButton.addEventListener('click', () => {
+    handleThrow('scissors');   
+});
+
+function handleThrow(throwSelect) {
+
+    
+    computerSelect = getRandomItem(hands);
+
+    let gameEnd = score(throwSelect, computerSelect);
+
+    if (gameEnd === 1) {
+        wins++;
+    } else if (gameEnd === 0) {
+        draws++;
+    } else if (gameEnd === -1) {
+        losses++;
+    }
+    games++;
+    
+    if (throwSelect === 'rock') {
+        rock++;
+    } else if (throwSelect === 'paper') {
+        paper++;
+    } else if (throwSelect === 'scissors') {
+        scissors++;
+    }
+    scoreDisplay();
+    throwRecordDisplay();
+}
+
+// update view
+scoreDisplay();
+throwRecordDisplay();
+
+
+
+    //throw events
+
+
+
+//results component
     // component
     // define and grab DOM elements
     // display functions
