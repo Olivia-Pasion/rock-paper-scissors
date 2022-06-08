@@ -12,6 +12,7 @@ let rock = 0;
 let paper = 0;
 let scissors = 0;
 
+
 let computerSelect = 'rock';
 let throwSelect = 'paper';
 
@@ -32,6 +33,7 @@ function scoreDisplay() {
     winsDisplay.textContent = wins;
     drawsDisplay.textContent = draws;
     lossesDisplay.textContent = losses;
+
 }
 
 //throw record component
@@ -52,6 +54,7 @@ function throwRecordDisplay() {
 
 //choose throw component
 
+const chooseThrow = document.getElementById('choose-throw');
 const rockButton = document.getElementById('rock-button');
 const paperButton = document.getElementById('paper-button');
 const scissorsButton = document.getElementById('scissors-button');
@@ -108,6 +111,12 @@ throwRecordDisplay();
 
 
 //results component
+
+const resultsSection = document.getElementById('results-section');
+const playerDisplay = document.getElementById('player-display');
+const outcomeDisplay = document.getElementById('outcome-display');
+const computerDisplay = document.getElementById('computer-display');
+
     // component
     // define and grab DOM elements
     // display functions
