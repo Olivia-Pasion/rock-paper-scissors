@@ -13,8 +13,8 @@ let paper = 0;
 let scissors = 0;
 
 let throwing = false;
-let computerSelect = 'rock';
-let throwSelect = 'paper';
+let computerSelect = '';
+
 let outcome = 0;
 
 
@@ -55,13 +55,16 @@ const scissorsButton = document.getElementById('scissors-button');
 
 function showThrow() {
     if (throwing) {
-        chooseThrow.classList.remove('hidden');
-    } else {
+        
         chooseThrow.classList.add('hidden');
+    } else {
+        chooseThrow.classList.remove('hidden');
+        
     }
 }
 
 rockButton.addEventListener('click', () => {
+    
     handleThrow('rock');
     
 });
@@ -76,10 +79,11 @@ scissorsButton.addEventListener('click', () => {
 });
 
 function handleThrow(throwSelect) {
-
+    throwing = true;
+    
     
     computerSelect = getRandomItem(hands);
-
+    
     let gameEnd = score(throwSelect, computerSelect);
 
     if (gameEnd === 1) {
@@ -98,13 +102,18 @@ function handleThrow(throwSelect) {
     } else if (throwSelect === 'scissors') {
         scissors++;
     }
-
+    playerDisplay.src = './assets/images/' + throwSelect + '.png';
+    computerDisplay.src = './assets/images/' + computerSelect + '.png';
     displayAll();
     
+  
     setTimeout(() => {
-        throwing = true;
+        throwing = false;  
         displayAll();
+         
     }, 3000);
+    
+   
 }
 
 // update view
@@ -118,31 +127,30 @@ function handleThrow(throwSelect) {
 //results component
 
 const resultsSection = document.getElementById('results-section');
-const playerDisplay = document.getElementById('player-display');
-const outcomeDisplay = document.getElementById('outcome-display');
-const outcomeImage = document.getElementById('outcomeImage');
-const computerDisplay = document.getElementById('computer-display');
+const playerDisplay = document.getElementById('player-image');
+const outcomeDisplay = document.getElementById('outcome-image');
+const outcomeImage = document.getElementById('outcome-image');
+const computerDisplay = document.getElementById('computer-image');
 
 function displayResults() {
     if (!throwing) {
-        resultsSection.classList.remove('hidden');
-    } else {
         resultsSection.classList.add('hidden');
+    } else {
+        resultsSection.classList.remove('hidden');
     }
 
-    playerDisplay.src = 'assets/' + throwSelect + '.png';
-    computerDisplay.src = 'assets/' + computerSelect + '.png';
-
+    
+    
     if (outcome === 1) {
         outcomeDisplay.textContent = 'Wins';
-        outcomeImage.src = 'assets/win.png';
+        outcomeImage.src = 'assets/images/winner.png';
 
     } else if (outcome === -1) {
         outcomeDisplay.textContent = 'lose';
-        outcomeImage.src = 'assets/lose.png';
+        outcomeImage.src = 'assets/images/lose.png';
     } else {
         outcomeDisplay.textContent = 'Draw';
-        outcomeImage.src = 'assets/draw.png';
+        outcomeImage.src = 'assets/images/draw.png';
     }
 }
 
