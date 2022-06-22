@@ -104,8 +104,8 @@ function handleThrow(throwSelect) {
     }
     playerDisplay.src = './assets/images/' + throwSelect + '.png';
     computerDisplay.src = './assets/images/' + computerSelect + '.png';
+    gameFinal = gameEnd;
     displayAll();
-    
   
     setTimeout(() => {
         throwing = false;  
@@ -131,37 +131,41 @@ const playerDisplay = document.getElementById('player-image');
 const outcomeDisplay = document.getElementById('outcome-image');
 const outcomeImage = document.getElementById('outcome-image');
 const computerDisplay = document.getElementById('computer-image');
+let gameFinal;
 
-function displayResults() {
+function displayResults(gameEnd) {
     if (!throwing) {
         resultsSection.classList.add('hidden');
     } else {
         resultsSection.classList.remove('hidden');
     }
 
-    
-    
-    if (outcome === 1) {
-        outcomeDisplay.textContent = 'Wins';
-        outcomeImage.src = 'assets/images/winner.png';
 
-    } else if (outcome === -1) {
+    
+    if (gameEnd === 1) {
+        outcomeDisplay.textContent = 'Wins';
+        outcomeImage.src = './assets/images/winner.png';
+
+    } else if (gameEnd === -1) {
         outcomeDisplay.textContent = 'lose';
-        outcomeImage.src = 'assets/images/lose.png';
+        outcomeImage.src = './assets/images/lose.png';
     } else {
         outcomeDisplay.textContent = 'Draw';
-        outcomeImage.src = 'assets/images/draw.png';
+        outcomeImage.src = './assets/images/draw.png';
     }
+    
 }
 
    
 
 // page load actions
+
+
 function displayAll() {
     showThrow();
     scoreDisplay();
-    displayResults();
+    displayResults(gameFinal);
 }
 
 
-
+displayAll();
