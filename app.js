@@ -15,7 +15,7 @@ let scissors = 0;
 let throwing = false;
 let computerSelect = '';
 
-let outcome = 0;
+
 
 
 
