@@ -1,5 +1,5 @@
 // import needed modules
-import { getRandomItem, score } from './assets/utils.js';
+import { getRandomItem, score } from './utils.js';
 
 // state
 const hands = ['rock', 'paper', 'scissors'];
@@ -128,7 +128,7 @@ function handleThrow(throwSelect) {
 
 const resultsSection = document.getElementById('results-section');
 const playerDisplay = document.getElementById('player-image');
-const outcomeDisplay = document.getElementById('outcome-image');
+
 const outcomeImage = document.getElementById('outcome-image');
 const computerDisplay = document.getElementById('computer-image');
 let gameFinal;
@@ -143,14 +143,14 @@ function displayResults(gameEnd) {
 
     
     if (gameEnd === 1) {
-        outcomeDisplay.textContent = 'Wins';
+        outcomeImage.textContent = 'Wins';
         outcomeImage.src = './assets/images/winner.png';
 
     } else if (gameEnd === -1) {
-        outcomeDisplay.textContent = 'lose';
+        outcomeImage.textContent = 'lose';
         outcomeImage.src = './assets/images/lose.png';
     } else {
-        outcomeDisplay.textContent = 'Draw';
+        outcomeImage.textContent = 'Draw';
         outcomeImage.src = './assets/images/draw.png';
     }
     
